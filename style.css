@@ -109,15 +109,6 @@ main h1{
 #info p{
     margin-bottom: 25%;
 }
-#info a{
-    color: #083d22;
-    margin-left: 45%;
-    padding: 5vh;
-    position: relative;
-}
-#info a:hover{
-    color: #3f683a;
-}
 
 
 /* --------------------Formação------------------- */
@@ -132,54 +123,27 @@ main h1{
     padding: 2vh;
 }
 
-#universidade{
+#formação{
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40vh;
+}
+#universidade {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 5vh;
-    gap: 2vh;
+    margin: auto;
 }
-
-
+#universidade > div{
+    margin: 0 10px;
+}
 #universidade > div img{
-    margin-top: 5vh;
     width: 30vh;
     height: 30vh;
 }
-#universidade .seta{
-    color: #083d22;
-    margin-bottom: 15vh;
-    grid-column: 2;
-}
-#universidade .seta:hover{
-    color: #3f683a;
-}
-
 #universidade > div p{
-    margin-bottom: 5vh;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: #0a0f53;
-}
-#universidade > div a{
-    background-color: #3f683a79;
-    margin-top: 1vh;
-    text-decoration: none;
-    color: #0a0f53;
-    font-size: 1.1rem;
-    padding: 2vh 5vh;
-    border-radius: 2vh;
-}
-/* #universidade > div a:hover{
-    background-color: #66917a54;
-    border: #3f683a79 solid 2px;
-    color: #0a0f53;
-}*/
-
-#universidade > div:nth-last-child(n + 3) {
-    margin-top: 4vh;
+    margin-bottom: 30px;
 }
 
 
@@ -189,7 +153,7 @@ main h1{
 #projetos{
     /* background-color: #3f683a38;*/
     margin-top: -20vh;
-    margin-bottom: 40vh;
+    margin-bottom: 300px;
     height: 50vh;
 }
 #projetos > h2{
@@ -202,6 +166,7 @@ main h1{
 
 #conteúdo{
     display: flex;
+    flex-wrap: wrap;
     width: max-content;
     margin: auto;
     justify-content: center;
@@ -210,8 +175,8 @@ main h1{
     gap: 10vh;
 }
 #conteúdo div{
-    width: 60vh;
-    height: 60vh;
+    width: 380px;
+    height: 390px;
     background-color: #1ae47c5d;
     /* background-color: #1ae47c38; */
     border-radius: 10%;
@@ -229,20 +194,7 @@ main h1{
     font-size: 1.2rem;
     font-family: 'Montserrat Alternates', sans-serif;
 }
-#conteúdo a, #universidade > div a, #materiais > div a{
-    font-size: 1.2rem;
-    padding: 2vh 10vh;
-    margin-top: 5vh;
-    border: none;
-    text-decoration: none;
-    color: #0a0f53;
-    border-radius: 30px;
-    background-color: #3f683a65;
-}
-#conteúdo  a:hover, #universidade > div a:hover, #materiais > div a:hover{
-    background-color: #083d226e;
-    box-shadow: 0 0 15px #083d22ad;
-}
+/*
 
 
 /* --------------------Materiais-------------------- */
@@ -256,10 +208,6 @@ main h1{
     margin-bottom: 10vh;
     
 }
-#materiais  > .seta{
-    margin-bottom: 20vh;
-    margin: 0 50%;
-}
 
 #apoio{
     /* background-color: #0a0f5380; */
@@ -268,14 +216,15 @@ main h1{
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
-    height: 70vh;
+    height: 50%;
     margin: 0 auto;
     margin-bottom: 20vh;
     
 }
 #apoio div{
-    width: 60vh;
-    height: 65vh;
+    width: 380px;
+    height: 390px;
+    padding: 10px;
     margin: 0 auto;
     background-color: #1ae47c38;
     border-radius: 10%;
@@ -298,6 +247,7 @@ main h1{
 
 /* ------------------Footer/Contato--------------------- */
 
+
 footer{
     border-top: #083d22 solid 4px;
     width: 95%;
@@ -319,4 +269,120 @@ footer > div a{
     color: #083d22;
     font-size: 1.2rem;
     padding: 5vh 5vh 5vh 0;
+}
+
+
+/* ---------------------Botões--------------------- */
+
+
+.button{
+    font-size: 1.2rem;
+    padding: 12px 60px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0a0f53;
+    transition: 0.5s ease;
+    border-radius: 30px;
+    background-color: #3f683a65;
+}
+.button:hover{
+    background-color: #083d226e;
+    box-shadow: 0 0 15px #083d22ad;
+}
+
+
+/* -------------------Responsividade-------------------- */
+
+
+@media screen and (min-width: 480px) and (max-width: 640px) {
+    /* -------------------Informações--------------------*/
+    #info{
+        flex-wrap: wrap;
+    }
+    #info > div p{
+        text-align: justify;
+    }
+
+    /* --------------------Formação-------------------*/
+    #universidade{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 40px;
+    }
+    #universidade div{
+        margin-bottom: 50px;
+    }
+    /* -------------------Projetos---------------------*/
+
+    #projetos{
+        height: fit-content;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+    #conteúdo{
+        display: block;
+        margin-bottom: 20vh;
+        margin: 0 auto;
+    }
+    #conteúdo div{
+        margin: auto;
+        margin-bottom: 10vh;
+        padding: 1vh;
+    }
+    #conteúdo div:last-child{
+        margin-bottom: 30vh;
+    }
+    #conteúdo > div a{
+        margin-top: 5vh;
+    }
+    /* ---------------------Materiais---------------------*/
+    #materiais{
+        margin-top: 240px;
+    }
+    #apoio > div{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+    /* --------------------Informações--------------------- */
+    main{
+        width: fit-content;
+    }
+    #info{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #info p{
+        text-align: justify;
+    }
+    #info > div img{
+        margin-top: -20vh;
+        height: 80vh;
+        width: 60vh;
+    }
+
+    /* -----------------------Formação-------------------- */
+    #formação{
+        width: 60%;
+    }
+    #universidade{
+        display: flex;
+        flex-direction: column;
+    }
+    #universidade > div{
+        margin-top: 40px;
+    }
+    #universidade > div p{
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    /* ---------------------Projetos----------------------*/
+    
+    #projetos{
+        flex-wrap: wrap;
+    }
 }
